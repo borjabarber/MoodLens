@@ -15,7 +15,7 @@ Estos pictogramas facilitan la identificación de emociones básicas como **aleg
 
 ## Indice del repositorio
 
-│── 📂 modelo_final  
+📂 modelo_final  
 │── 📁 data ([Dataset Kaggle](https://www.kaggle.com/datasets/jonathanoheix/face-expression-recognition-dataset))  
 │ │── 📁 images  
 │ │── 📁 train  
