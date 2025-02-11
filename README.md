@@ -15,6 +15,14 @@ Estos pictogramas facilitan la identificación de emociones básicas como **aleg
 
 ## Indice del repositorio
 
+📂 Presentaciones (Todas las presentaciones del proyecto)  
+│── 📄 Pitch Elevator (Primera presentación) 
+
+📂 aproximaciones (Todos los diferentes modelos y tecnologias de pruebas) 
+│── 📁 CNN (Primer Modelo para lectura de imagenes jpeg) 
+│── 📁 RandomForestClassifier (Primer Modelo basico y perfectamente funcional) 
+│── 📁 Yolov11 (Primer acercamiento a la tecnologia de Ultralitycs)  
+
 📂 modelo_final  
 │── 📁 data ([Dataset Kaggle](https://www.kaggle.com/datasets/jonathanoheix/face-expression-recognition-dataset))  
 │ │── 📁 images  
@@ -33,11 +41,8 @@ Estos pictogramas facilitan la identificación de emociones básicas como **aleg
 │── 📄 modelFEC.h5 (Modelo en formato h5)  
 │── 📄 mmodelFECH52.keras (Modelo en formato keras)  
 │── 📄 notebook_entrenamiento (Notebook de entrenamiento del modelo)  
-│── 📄 notebook_modelo_final (Notebook armado para el uso del modelo final)  
-
-📂 Presentaciones (Todas las presentaciones del proyecto)  
-│── 📄 Pitch Elevator (Primera presentación)  
-│── 📄 README.md  
+│── 📄 notebook_modelo_final (Notebook armado para el uso del modelo final)   
+📄 README.md  
 
 ## Requisitos
 
