@@ -11,8 +11,7 @@ Estos pictogramas facilitan la identificación de emociones básicas como **aleg
 
 1. **Detección en tiempo real**: Al abrir la app, MoodLens activa la cámara y analiza los rostros detectados mediante su red CNN.  
 2. **Procesamiento con IA**: El modelo de TensorFlow, entrenado con miles de imágenes de expresiones faciales diversas, clasifica la emoción con precisión.  
-3. **Traducción visual**: La emoción identificada se convierte instantáneamente en un pictograma intuitivo (diseñado con colores y formas amigables), acompañado de una descripción textual breve.  
-4. **Personalización**: Los usuarios pueden ajustar el tamaño de los pictogramas, elegir entre distintos estilos visuales o activar notificaciones para practicar el reconocimiento emocional.  
+3. **Traducción visual**: La emoción identificada se convierte instantáneamente en un pictograma intuitivo (diseñado con colores y formas amigables), acompañado de una descripción textual breve.   
 
 ## Indice del repositorio
 
@@ -39,6 +38,21 @@ Estos pictogramas facilitan la identificación de emociones básicas como **aleg
 📂 Presentaciones (Todas las presentaciones del proyecto)  
 │── 📄 Pitch Elevator (Primera presentación)  
 │── 📄 README.md  
+
+## Requisitos
+
+Para ejecutar este modelo, necesitas instalar las siguientes librerías de Python:
+
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- jupyter
+- tensorflow
+- keras
+- streamlit
+- opencv
+- cv2
 
 ## Gracias
 
