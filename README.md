@@ -4,7 +4,7 @@
 
 
 
-    📂 modelo_final  
+│── 📂 modelo_final  
 │── 📁 data ([Dataset Kaggle](https://www.kaggle.com/datasets/jonathanoheix/face-expression-recognition-dataset))  
 │ │── 📁 images  
 │ │── 📁 train  
