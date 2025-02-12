@@ -44,7 +44,7 @@ Estos pictogramas facilitan la identificación de emociones básicas como **aleg
 
 ## Requisitos
 
-Para ejecutar este modelo, necesitas instalar las siguientes librerías de Python:
+Para ejecutar el modelo final, necesitas instalar las siguientes librerías de Python:
 
 - pandas
 - numpy
