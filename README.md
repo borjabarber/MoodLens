@@ -40,7 +40,7 @@ Estos pictogramas facilitan la identificación de emociones básicas como **aleg
 │── 📄 mmodelFECH52.keras (Modelo en formato keras)  
 │── 📄 notebook_entrenamiento (Notebook de entrenamiento del modelo)  
 │── 📄 notebook_modelo_final (Notebook armado para el uso del modelo final)  
-📂 models (Todos los modelos desarrolados durante la investigación) 
+📂 models (Todos los modelos desarrolados durante la investigación)   
 📄 README.md  
 
 ## Requisitos
