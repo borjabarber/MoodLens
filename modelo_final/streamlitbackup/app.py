@@ -11,26 +11,45 @@ import time
 # Desactivar warnings informativos de TensorFlow
 absl.logging.set_verbosity(absl.logging.ERROR)
 
+# Obtener la ruta absoluta del directorio actual
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# ------------------ CARGA DE MODELOS E IMÁGENES ------------------
+
+# Lista de emociones
 classes = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
 
 # Cargar imágenes de emociones y convertirlas a RGB
-emotion_images = {emotion: cv2.cvtColor(cv2.imread(os.path.join(BASE_DIR, 'emociones', f'{emotion}.jpg')), cv2.COLOR_BGR2RGB) 
-                  if cv2.imread(os.path.join(BASE_DIR, 'emociones', f'{emotion}.jpg')) is not None else None 
-                  for emotion in classes}
+emotion_images = {}
+for emotion in classes:
+    img_path = os.path.join(BASE_DIR, 'emociones', f'{emotion}.jpg')
+    img = cv2.imread(img_path)
+    if img is not None:
+        emotion_images[emotion] = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # Convertir BGR a RGB
+    else:
+        emotion_images[emotion] = None  # Si la imagen no se carga, se asigna None
 
+# Cargar el detector de rostros
 prototxtPath = os.path.join(BASE_DIR, 'face_detector', 'deploy.prototxt')
 weightsPath = os.path.join(BASE_DIR, 'face_detector', 'res10_300x300_ssd_iter_140000.caffemodel')
 faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
 
+# Cargar el modelo de detección de emociones
 emotionModel = load_model(os.path.join(BASE_DIR, "modelFEC.h5"))
+emotionModel.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
+
+# ------------------ FUNCIÓN DE PREDICCIÓN ------------------
 
 def predict_emotion(frame):
+    """
+    Detecta rostros en el frame y predice la emoción.
+    Dibuja la caja y etiqueta en la imagen.
+    """
     try:
         blob = cv2.dnn.blobFromImage(frame, 1.0, (224, 224), (104.0, 177.0, 123.0))
         faceNet.setInput(blob)
         detections = faceNet.forward()
+
         current_emotion = None
 
         for i in range(0, detections.shape[2]):
@@ -64,57 +83,43 @@ def predict_emotion(frame):
         print("Error en predict_emotion:", e)
         return frame, None
 
+# ------------------ INTERFAZ DE STREAMLIT ------------------
+
 st.title("MoodLens Traductor de emociones a pictogramas TEA")
-st.write("Descubre el mundo de las emociones.")
+st.write("Concede acceso a la cámara y descubre el mundo de la emociones.")
 
-col_buttons = st.columns(2)
-with col_buttons[0]:
-    start_button = st.button("▶️ Iniciar")
-with col_buttons[1]:
-    stop_button = st.button("⏹️ Detener")
-
+# Crear columnas para mostrar el video y la imagen al lado
 col1, col2 = st.columns(2)
+
+# Iniciar la webcam
+cap = cv2.VideoCapture(0)
+
+# Inicializamos los placeholders (vacíos) para actualizar solo cuando se necesite
 video_placeholder = col1.empty()
 emotion_placeholder = col2.empty()
 
-if 'is_running' not in st.session_state:
-    st.session_state.is_running = False
-if 'cap' not in st.session_state:
-    st.session_state.cap = None
+while cap.isOpened():
+    ret, frame = cap.read()
+    if not ret:
+        st.error("No se pudo capturar el frame.")
+        break
 
-if start_button:
-    st.session_state.is_running = True
-    if st.session_state.cap is None or not st.session_state.cap.isOpened():
-        st.session_state.cap = cv2.VideoCapture(0)
+    frame = imutils.resize(frame, width=640)
+    frame, detected_emotion = predict_emotion(frame)
 
-if stop_button:
-    st.session_state.is_running = False
-    if st.session_state.cap is not None:
-        st.session_state.cap.release()
-        st.session_state.cap = None
+    # Convertir BGR a RGB para Streamlit
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
-while st.session_state.is_running and st.session_state.cap is not None:
-    ret, frame = st.session_state.cap.read()
-    if ret:
-        frame = imutils.resize(frame, width=640)
-        frame, detected_emotion = predict_emotion(frame)
-        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    # Limpiar el contenido anterior antes de mostrar el nuevo fotograma
+    video_placeholder.image(frame, channels="RGB", use_container_width=True)
 
-        video_placeholder.image(frame, channels="RGB", use_container_width=True)
+    # Mostrar la imagen de la emoción detectada en la segunda columna si se ha detectado una emoción
+    if detected_emotion and detected_emotion in emotion_images:
+        emotion_img = emotion_images[detected_emotion]
+        if emotion_img is not None:
+            emotion_placeholder.image(emotion_img, caption=f"Emoción: {detected_emotion}", use_container_width=True)
 
-        if detected_emotion and detected_emotion in emotion_images:
-            emotion_img = emotion_images[detected_emotion]
-            if emotion_img is not None:
-                emotion_placeholder.image(emotion_img, caption=f"Emoción: {detected_emotion}", use_container_width=True)
+    # Pausa para evitar que Streamlit se bloquee
+    time.sleep(0.05)
 
-        time.sleep(0.05)
-    else:
-        st.error("Error al capturar video")
-        st.session_state.is_running = False
-        st.session_state.cap.release()
-        st.session_state.cap = None
-
-if not st.session_state.is_running:
-    video_placeholder.info("Presiona el botón 'Iniciar' para comenzar la detección")
-    if emotion_placeholder:
-        emotion_placeholder.empty()
+cap.release()
