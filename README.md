@@ -15,11 +15,8 @@ Estos pictogramas facilitan la identificación de emociones básicas como **aleg
 
 ## Indice del repositorio
 
-📂 Presentaciones (Todas las presentaciones del proyecto)    
-│── 📄 Pitch Elevator (Primera presentación)  
 📂 aproximaciones (Todos los diferentes modelos y tecnologias de pruebas)  
-│── 📁 CNN (Primer Modelo para lectura de imagenes jpeg)  
-│── 📁 FER2013 (Modelo basado en la libreria fer2013)     
+│── 📁 CNN (Primer Modelo para lectura de imagenes jpeg)      
 │── 📁 RandomForestClassifier (Primer Modelo basico y perfectamente funcional)   
 │── 📁 Yolov11 (Primer acercamiento a la tecnologia de Ultralitycs)    
 📂 modelo_final  
@@ -35,13 +32,17 @@ Estos pictogramas facilitan la identificación de emociones básicas como **aleg
 │ │── 📁 two  
 │ │── 📁 three  
 │ │── 📁 four  
+│── 📁 streamlitbackup (Version simple pero solida de la app) 
 │── 📄 app (Ejecutable para Streamlit)  
 │── 📄 main (Ejecutable para terminal)  
 │── 📄 modelFEC.h5 (Modelo en formato h5)  
 │── 📄 mmodelFECH52.keras (Modelo en formato keras)  
 │── 📄 notebook_entrenamiento (Notebook de entrenamiento del modelo)  
 │── 📄 notebook_modelo_final (Notebook armado para el uso del modelo final)  
-📂 models (Todos los modelos desarrolados durante la investigación)   
+📂 models (Todos los modelos desarrolados durante la investigación)  
+📂 notebook (Memorias sobre los diferentes modelos y como los he trabajado)     
+📂 Presentaciones (Todas las presentaciones del proyecto)    
+│── 📄 Pitch Elevator (Primera presentación)    
 📄 README.md  
 
 ## Requisitos
