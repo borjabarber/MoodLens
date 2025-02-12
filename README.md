@@ -17,8 +17,9 @@ Estos pictogramas facilitan la identificación de emociones básicas como **aleg
 
 📂 Presentaciones (Todas las presentaciones del proyecto)    
 │── 📄 Pitch Elevator (Primera presentación)  
-📂 aproximaciones (Todos los diferentes modelos y tecnologias de pruebas)     
+📂 aproximaciones (Todos los diferentes modelos y tecnologias de pruebas)  
 │── 📁 CNN (Primer Modelo para lectura de imagenes jpeg)  
+│── 📁 FER2013 (Modelo basado en la libreria fer2013)     
 │── 📁 RandomForestClassifier (Primer Modelo basico y perfectamente funcional)   
 │── 📁 Yolov11 (Primer acercamiento a la tecnologia de Ultralitycs)    
 📂 modelo_final  
