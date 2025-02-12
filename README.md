@@ -52,6 +52,7 @@ Para ejecutar el modelo final, necesitas instalar las siguientes librerías de P
 - matplotlib
 - seaborn
 - jupyter
+- scikit-learn
 - tensorflow
 - keras
 - streamlit
