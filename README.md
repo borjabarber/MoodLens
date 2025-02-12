@@ -3,14 +3,14 @@
 ## ¿Qué es MoodLens?  
 MoodLens es una aplicación innovadora diseñada para transformar la forma en que las personas con trastorno del espectro autista (TEA) perciben y comprenden las emociones.  
 
-A través de TensorFlow y una red neuronal convolucional (CNN) entrenada para el reconocimiento facial, MoodLens captura expresiones en tiempo real a través de la cámara de tu dispositivo y las convierte en pictogramas claros y universales.  
+A través de la libreria TensorFlow y una red neuronal convolucional (CNN) entrenada para el reconocimiento facial, MoodLens captura expresiones en tiempo real a través de la cámara de tu dispositivo y las convierte en pictogramas claros y universales.  
 
 Estos pictogramas facilitan la identificación de emociones básicas como **alegría, tristeza, enfado, sorpresa o miedo**, ofreciendo una herramienta inclusiva para mejorar la comunicación y la interacción social.  
 
 ## ¿Cómo funciona?  
 
-1. **Detección en tiempo real**: Al abrir la app, MoodLens activa la cámara y analiza los rostros detectados mediante su red CNN.  
-2. **Procesamiento con IA**: El modelo de TensorFlow, entrenado con miles de imágenes de expresiones faciales diversas, clasifica la emoción con precisión.  
+1. **Detección en tiempo real**: Al abrir la app, MoodLens activa la cámara y analiza los rostros detectados.  
+2. **Procesamiento con IA**: El modelo, entrenado con miles de imágenes de expresiones faciales, clasifica la emoción expresada con precisión.  
 3. **Traducción visual**: La emoción identificada se convierte instantáneamente en un pictograma intuitivo (diseñado con colores y formas amigables), acompañado de una descripción textual breve.   
 
 ## Indice del repositorio
