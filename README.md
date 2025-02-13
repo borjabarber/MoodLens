@@ -32,7 +32,7 @@ Estos pictogramas facilitan la identificación de emociones básicas como **aleg
 │ │── 📁 two  
 │ │── 📁 three  
 │ │── 📁 four  
-│── 📁 streamlitbackup (Version simple pero solida de la app) 
+│── 📁 streamlitbackup (Version simple pero solida de la app)  
 │── 📄 app (Ejecutable para Streamlit)  
 │── 📄 main (Ejecutable para terminal)  
 │── 📄 modelFEC.h5 (Modelo en formato h5)  
@@ -41,7 +41,8 @@ Estos pictogramas facilitan la identificación de emociones básicas como **aleg
 │── 📄 notebook_modelo_final (Notebook armado para el uso del modelo final)  
 📂 models (Todos los modelos desarrolados durante la investigación)  
 📂 notebook (Memorias sobre los diferentes modelos y como los he trabajado)     
-📂 Presentaciones (Todas las presentaciones del proyecto)    
+📂 Presentaciones (Todas las presentaciones del proyecto)  
+📂 streamlit (apps de streamlit)      
 │── 📄 Pitch Elevator (Primera presentación)    
 📄 README.md  
 
