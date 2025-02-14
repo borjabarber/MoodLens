@@ -1,0 +1,8 @@
+streamlit
+opencv-python-headless
+opencv-contrib-python
+tensorflow
+numpy
+imutils
+absl-py
+cv2
