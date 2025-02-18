@@ -42,7 +42,7 @@ Estos pictogramas facilitan la identificación de emociones básicas como **aleg
 📂 models (Todos los modelos desarrolados durante la investigación)  
 📂 notebook (Memorias sobre los diferentes modelos y como los he trabajado)     
 📂 Presentaciones (Todas las presentaciones del proyecto)  
-📂 streamlit (apps de streamlit)      
+📂 streamlit (app de streamlit)      
 │── 📄 Pitch Elevator (Primera presentación)    
 📄 README.md  
 
