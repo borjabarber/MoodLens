@@ -64,7 +64,7 @@ def predict_emotion(frame):
         print("Error en predict_emotion:", e)
         return frame, None
 
-st.title("MoodLens Traductor de emociones a pictogramas TEA")
+st.title("MoodLens")
 st.write("Descubre el mundo de las emociones.")
 
 col_buttons = st.columns(2)
