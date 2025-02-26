@@ -16,11 +16,12 @@ Estos pictogramas facilitan la identificación de emociones básicas como **aleg
 3. **Traducción visual**: La emoción identificada se convierte instantáneamente en un pictograma intuitivo (diseñado con colores y formas amigables), acompañado de una descripción textual breve.   
 
 ## Indice del repositorio
-
+📂 Presentaciones (Todas las presentaciones del proyecto)  
 📂 aproximaciones (Todos los diferentes modelos y tecnologias de pruebas)  
 │── 📁 CNN (Primer Modelo para lectura de imagenes jpeg)      
 │── 📁 RandomForestClassifier (Primer Modelo basico y perfectamente funcional)   
 │── 📁 Yolo (Primer acercamiento a la tecnologia de Ultralitycs)    
+📂 img (Imagenes del proyecto)  
 📂 modelo_final  
 │── 📁 data ([Dataset Kaggle](https://www.kaggle.com/datasets/jonathanoheix/face-expression-recognition-dataset))  
 │ │── 📁 images  
@@ -42,8 +43,7 @@ Estos pictogramas facilitan la identificación de emociones básicas como **aleg
 │── 📄 notebook_entrenamiento (Notebook de entrenamiento del modelo)  
 │── 📄 notebook_modelo_final (Notebook armado para el uso del modelo final)  
 📂 models (Todos los modelos desarrolados durante la investigación)  
-📂 notebook (Memorias sobre los diferentes modelos y como los he trabajado)     
-📂 Presentaciones (Todas las presentaciones del proyecto)  
+📂 notebook (Memorias sobre los diferentes modelos y como los he trabajado)      
 📂 streamlit (app de streamlit)      
 │ 
 📄 README.md  
