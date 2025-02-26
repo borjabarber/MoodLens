@@ -1,3 +1,5 @@
+![imagen](./img/imagen.png)
+
 # Descubre MoodLens: Tu Aliado en el Reconocimiento de Emociones
 
 ## ¿Qué es MoodLens?  
