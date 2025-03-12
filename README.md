@@ -48,6 +48,13 @@ Estos pictogramas facilitan la identificación de emociones básicas como **aleg
 │ 
 📄 README.md  
 
+### Ejecución de la Aplicación
+Para iniciar la aplicación, ejecuta el siguiente comando en la terminal dentro de la carpeta streamlit del repositorio:
+```bash
+pip install requirements.txt
+streamlit run app.py
+```
+
 ## Requisitos
 
 Para ejecutar el modelo final, necesitas instalar las siguientes librerías de Python:
