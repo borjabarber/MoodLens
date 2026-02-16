@@ -1,7 +1,0 @@
-streamlit
-opencv-python-headless
-tensorflow
-numpy
-imutils
-absl-py
-

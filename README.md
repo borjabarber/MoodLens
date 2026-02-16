@@ -1,97 +1,191 @@
-![imagen](./img/imagen.png)
+# MoodLens
 
-# Descubre MoodLens: Tu Aliado en el Reconocimiento de Emociones
+**Traductor de emociones a pictogramas TEA en tiempo real**
 
-## ¿Qué es MoodLens?  
-MoodLens es una aplicación innovadora diseñada para transformar la forma en que las personas con trastorno del espectro autista (TEA) perciben y comprenden las emociones.  
+MoodLens es una aplicación que utiliza inteligencia artificial para detectar emociones faciales a través de la webcam y mostrar pictogramas TEA (Trastorno del Espectro Autista) correspondientes. Diseñada para facilitar la comunicación y comprensión emocional.
 
-A través de la libreria TensorFlow y una red neuronal convolucional (CNN) entrenada para el reconocimiento facial, MoodLens captura expresiones en tiempo real a través de la cámara de tu dispositivo y las convierte en pictogramas claros y universales.  
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red)
+![React](https://img.shields.io/badge/React-18+-61DAFB)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688)
 
-Estos pictogramas facilitan la identificación de emociones básicas como **alegría, tristeza, enfado, sorpresa o miedo**, ofreciendo una herramienta inclusiva para mejorar la comunicación y la interacción social.  
+---
 
-## ¿Cómo funciona?  
+## Demo
 
-1. **Detección en tiempo real**: Al abrir la app, MoodLens activa la cámara y analiza los rostros detectados.  
-2. **Procesamiento con IA**: El modelo, entrenado con miles de imágenes de expresiones faciales, clasifica la emoción expresada con precisión.  
-3. **Traducción visual**: La emoción identificada se convierte instantáneamente en un pictograma intuitivo (diseñado con colores y formas amigables), acompañado de una descripción textual breve.   
+<!-- Enlace a video de Vimeo -->
+[Ver demo en Vimeo](https://vimeo.com/TU_VIDEO_ID)
 
-## Indice del repositorio
-📂 Presentaciones (Todas las presentaciones del proyecto)  
-📂 aproximaciones (Todos los diferentes modelos y tecnologias de pruebas)  
-│── 📁 CNN (Primer Modelo para lectura de imagenes jpeg)      
-│── 📁 RandomForestClassifier (Primer Modelo basico y perfectamente funcional)   
-│── 📁 Yolo (Primer acercamiento a la tecnologia de Ultralitycs)    
-📂 img (Imagenes del proyecto)  
-📂 modelo_final  
-│── 📁 data ([Dataset Kaggle](https://www.kaggle.com/datasets/jonathanoheix/face-expression-recognition-dataset))  
-│ │── 📁 images  
-│ │── 📁 train  
-│ │── 📁 validation  
-│── 📁 emociones (Imágenes de los pictogramas usados para la comunicación TEA)  
-│── 📁 face_detector (Modelo usado de detección de rostros)  
-│── 📁 logs (Logs del entrenamiento)  
-│── 📁 modelos entrenados (Diferentes modelos entrenados)  
-│ │── 📁 one  
-│ │── 📁 two  
-│ │── 📁 three  
-│ │── 📁 four  
-│── 📁 streamlitbackup (Version simple pero solida de la app)  
-│── 📄 app (Ejecutable para Streamlit)  
-│── 📄 main (Ejecutable para terminal)  
-│── 📄 modelFEC.h5 (Modelo en formato h5)  
-│── 📄 mmodelFECH52.keras (Modelo en formato keras)  
-│── 📄 notebook_entrenamiento (Notebook de entrenamiento del modelo)  
-│── 📄 notebook_modelo_final (Notebook armado para el uso del modelo final)  
-📂 models (Todos los modelos desarrolados durante la investigación)  
-📂 notebook (Memorias sobre los diferentes modelos y como los he trabajado)      
-📂 streamlit (app de streamlit)      
-│ 
-📄 README.md  
+---
 
-### Ejecución de la Aplicación
-Para iniciar la aplicación, ejecuta el siguiente comando en la terminal dentro de la carpeta streamlit del repositorio:
-```bash
-streamlit run app.py
+## Características
+
+- **CNN propia** - Red neuronal convolucional entrenada con dataset FER2013
+- **Detección en tiempo real** - Procesamiento de webcam con GPU
+- **7 emociones** - Enojo, asco, miedo, felicidad, neutral, tristeza, sorpresa
+- **Pictogramas TEA** - Comunicación visual accesible
+- **App web moderna** - React + FastAPI con diseño oscuro
+- **GPU accelerated** - Soporte CUDA para inferencia rápida
+
+---
+
+## Arquitectura
+
+```
+moodlens/
+├── data/FER2013/              # Dataset (28,709 train + 7,178 test)
+├── models/
+│   ├── emotion_cnn.pth        # Modelo entrenado (69.7% accuracy)
+│   ├── training_history.png   # Gráficas de entrenamiento
+│   └── confusion_matrix.png   # Matriz de confusión
+├── pictograms/                # Pictogramas TEA (7 emociones)
+├── notebooks/
+│   └── 01_emotion_cnn_training.ipynb
+├── app/
+│   ├── backend/
+│   │   └── main.py            # FastAPI + WebSocket
+│   ├── frontend/
+│   │   └── src/App.jsx        # React + Vite
+│   └── start.bat              # Script de inicio
+├── webcam_emotion.py          # App standalone OpenCV
+├── webcam_emotion_v2.py       # Versión simplificada
+├── train_model.py             # Script de entrenamiento
+└── requirements.txt           # Dependencias Python
 ```
 
-## Requisitos
+---
 
-Para ejecutar el modelo final, necesitas instalar las siguientes librerías de Python:
+## Instalación
 
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- jupyter
-- scikit-learn
-- tensorflow
-- keras
-- streamlit
-- opencv
-- cv2
+### Requisitos
+- Python 3.11+
+- Node.js 18+
+- GPU con CUDA (recomendado)
 
-## Gracias
+### 1. Clonar y crear entorno
+```bash
+cd moodlens
+python -m venv .venv
+.venv\Scripts\activate  # Windows
+```
 
-MIT License
+### 2. Instalar dependencias Python
+```bash
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+pip install fastapi uvicorn[standard] websockets opencv-python numpy pillow
+```
 
-Copyright (c) 2025 Borja Barber
+### 3. Instalar dependencias Frontend
+```bash
+cd app/frontend
+npm install
+```
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+---
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+## Uso
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+### Opción 1: App Web (Recomendada)
 
+**Terminal 1 - Backend:**
+```bash
+cd moodlens
+.venv\Scripts\activate
+python app/backend/main.py
+```
 
+**Terminal 2 - Frontend:**
+```bash
+cd moodlens/app/frontend
+npm run dev
+```
+
+Abrir: **http://localhost:5173**
+
+### Opción 2: App Standalone (OpenCV)
+```bash
+cd moodlens
+.venv\Scripts\activate
+python webcam_emotion_v2.py
+```
+
+Controles: `Q` = Salir | `S` = Screenshot
+
+---
+
+## Modelo CNN
+
+### Arquitectura
+- 4 bloques convolucionales (64 → 128 → 256 → 512 filtros)
+- BatchNorm + ReLU + Dropout (0.25)
+- 2 capas fully connected (512 → 256 → 7)
+- ~6 millones de parámetros
+
+### Rendimiento
+| Métrica | Valor |
+|---------|-------|
+| Accuracy | 69.7% |
+| Dataset | FER2013 |
+| Épocas | ~40 (Early Stopping) |
+
+### Precisión por emoción
+| Emoción | Precision |
+|---------|-----------|
+| Felicidad | 89% |
+| Sorpresa | 80% |
+| Asco | 66% |
+| Enojo | 64% |
+| Neutral | 61% |
+| Tristeza | 56% |
+| Miedo | 55% |
+
+---
+
+## Stack Tecnológico
+
+| Componente | Tecnología |
+|------------|------------|
+| ML Framework | PyTorch 2.0 |
+| Backend | FastAPI |
+| Frontend | React + Vite |
+| Streaming | WebSocket |
+| Visión | OpenCV |
+| GPU | CUDA 12.1 |
+
+---
+
+## Reentrenar modelo
+
+```bash
+cd moodlens
+.venv\Scripts\activate
+python train_model.py
+```
+
+El script:
+1. Carga dataset FER2013 de `data/FER2013/`
+2. Aplica data augmentation
+3. Entrena con Early Stopping (patience=7)
+4. Guarda modelo en `models/emotion_cnn.pth`
+
+---
+
+## Screenshots
+
+<!-- Añadir capturas de pantalla aquí -->
+
+| Pantalla de bienvenida | Detección de emociones |
+|------------------------|------------------------|
+| ![Welcome](screenshots/welcome.png) | ![Detection](screenshots/detection.png) |
+
+---
+
+## Licencia
+
+Proyecto educativo. Pictogramas sujetos a sus respectivas licencias.
+
+---
+
+## Autor
+
+Desarrollado por Borja Barber.
