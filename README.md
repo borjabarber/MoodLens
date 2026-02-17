@@ -62,17 +62,27 @@ moodlens/
 - Node.js 18+
 - GPU con CUDA (recomendado)
 
-### 1. Clonar y crear entorno
+### 1. Clonar y crear entorno virtual
 ```bash
+git clone https://github.com/TU_USUARIO/moodlens.git
 cd moodlens
 python -m venv .venv
-.venv\Scripts\activate  # Windows
+
+# Activar entorno virtual
+.venv\Scripts\activate        # Windows (cmd / PowerShell)
+source .venv/bin/activate      # macOS / Linux
 ```
 
 ### 2. Instalar dependencias Python
 ```bash
+# PyTorch con soporte CUDA (GPU) — elige la URL según tu versión de CUDA
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
-pip install fastapi uvicorn[standard] websockets opencv-python numpy pillow
+
+# Resto de dependencias del proyecto
+pip install -r requirements.txt
+
+# Dependencias del backend (FastAPI, WebSocket, OpenCV…)
+pip install -r app/backend/requirements.txt
 ```
 
 ### 3. Instalar dependencias Frontend
@@ -90,7 +100,10 @@ npm install
 **Terminal 1 - Backend:**
 ```bash
 cd moodlens
-.venv\Scripts\activate
+# Activar entorno virtual (si no está activo)
+.venv\Scripts\activate        # Windows
+source .venv/bin/activate      # macOS / Linux
+
 python app/backend/main.py
 ```
 
@@ -105,7 +118,10 @@ Abrir: **http://localhost:5173**
 ### Opción 2: App Standalone (OpenCV)
 ```bash
 cd moodlens
-.venv\Scripts\activate
+# Activar entorno virtual (si no está activo)
+.venv\Scripts\activate        # Windows
+source .venv/bin/activate      # macOS / Linux
+
 python webcam_emotion_v2.py
 ```
 
@@ -158,7 +174,10 @@ Controles: `Q` = Salir | `S` = Screenshot
 
 ```bash
 cd moodlens
-.venv\Scripts\activate
+# Activar entorno virtual
+.venv\Scripts\activate        # Windows
+source .venv/bin/activate      # macOS / Linux
+
 python train_model.py
 ```
 
