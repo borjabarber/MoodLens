@@ -123,16 +123,8 @@ function App() {
   if (!started) {
     return (
       <div className="app">
-        <div className="bg-animation">
-          <div className="blob blob-1"></div>
-          <div className="blob blob-2"></div>
-          <div className="blob blob-3"></div>
-        </div>
         <div className="welcome-screen">
           <div className="welcome-content">
-            <div className="welcome-logo">
-              <Logo />
-            </div>
             <h1>MoodLens</h1>
             <p className="welcome-subtitle">
               Traductor de emociones a pictogramas TEA
@@ -149,10 +141,6 @@ function App() {
   // Pantalla principal
   return (
     <div className="app">
-      <div className="bg-animation">
-        <div className="blob blob-1"></div>
-        <div className="blob blob-2"></div>
-      </div>
       <nav className="navbar">
         <div className="logo-nav">
           <Logo />

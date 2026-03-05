@@ -5,7 +5,7 @@ echo ============================================================
 echo.
 
 echo Iniciando Backend (FastAPI) en puerto 8000...
-start "MoodLens Backend" cmd /k "cd /d %~dp0backend && ..\..\..\.venv\Scripts\python main.py"
+start "MoodLens Backend" cmd /k "cd /d %~dp0backend && ..\..\.venv\Scripts\python main.py"
 
 timeout /t 3 /nobreak > nul
 
