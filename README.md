@@ -2,12 +2,24 @@
 
 **Traductor de emociones a pictogramas TEA en tiempo real**
 
-MoodLens es una aplicación que utiliza inteligencia artificial para detectar emociones faciales a través de la webcam y mostrar pictogramas TEA (Trastorno del Espectro Autista) correspondientes. Diseñada para facilitar la comunicación y comprensión emocional.
+Las emociones son un lenguaje universal que conecta a las personas. Sin embargo, para muchas personas con Trastorno del Espectro Autista (TEA), interpretar las emociones en el rostro de los demás puede resultar un gran desafío. MoodLens nace precisamente para ayudar a salvar esa distancia.
+
+Mediante una red neuronal, MoodLens analiza en tiempo real las expresiones faciales captadas por la webcam y las traduce de forma inmediata en pictogramas visuales adaptados al lenguaje utilizado en el TEA. Más que una aplicación de reconocimiento facial, es una herramienta pensada para facilitar la comprensión del mundo emocional que nos rodea.
+
+Con MoodLens, una sonrisa se transforma en el pictograma de felicidad. Un ceño fruncido puede convertirse en enfado o tristeza. Un gesto sencillo, representado de forma clara, que puede marcar una gran diferencia para quien necesita una guía visual para interpretar las emociones.
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red)
 ![React](https://img.shields.io/badge/React-18+-61DAFB)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688)
+
+---
+
+## ¿Cómo funciona?
+
+- **Detección en tiempo real:** Al abrir la app, MoodLens activa la cámara y analiza los rostros detectados.
+- **Procesamiento con IA:** La red neuronal entrenada con miles de imágenes de expresiones faciales clasifica la emoción expresada con precisión.
+- **Traducción visual:** La emoción identificada se convierte instantáneamente en un pictograma TEA, acompañado de una descripción textual breve.
 
 ---
 
