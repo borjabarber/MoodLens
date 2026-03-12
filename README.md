@@ -29,6 +29,14 @@ MoodLens es una aplicación que utiliza inteligencia artificial para detectar em
 
 ---
 
+
+
+## Metricas
+
+añadir aqui
+
+---
+
 ## Arquitectura
 
 ```
@@ -144,6 +152,8 @@ Controles: `Q` = Salir | `S` = Screenshot
 | Dataset | FER2013 |
 | Épocas | ~40 (Early Stopping) |
 
+![Métricas del modelo](screenshoots/metricas/Captura%20de%20pantalla%202026-01-27%20115137.png)
+
 ### Precisión por emoción
 | Emoción | Precision |
 |---------|-----------|
@@ -191,11 +201,14 @@ El script:
 
 ## Screenshots
 
-<!-- Añadir capturas de pantalla aquí -->
+![Pantalla de bienvenida](screenshoots/app_final/pantalla_welcome.png)
 
-| Pantalla de bienvenida | Detección de emociones |
-|------------------------|------------------------|
-| ![Welcome](screenshots/welcome.png) | ![Detection](screenshots/detection.png) |
+| | | |
+|---|---|---|
+| ![App 1](screenshoots/app_final/Captura%20de%20pantalla%202026-03-12%20201003.png) | ![App 2](screenshoots/app_final/Captura%20de%20pantalla%202026-03-12%20201018.png) | ![App 3](screenshoots/app_final/Captura%20de%20pantalla%202026-03-12%20201042.png) |
+| ![App 4](screenshoots/app_final/Captura%20de%20pantalla%202026-03-12%20201106.png) | ![App 5](screenshoots/app_final/Captura%20de%20pantalla%202026-03-12%20201127.png) | ![App 6](screenshoots/app_final/Captura%20de%20pantalla%202026-03-12%20201147.png) |
+| ![App 7](screenshoots/app_final/Captura%20de%20pantalla%202026-03-12%20201205.png) | ![App 8](screenshoots/app_final/Captura%20de%20pantalla%202026-03-12%20201224.png) | ![App 9](screenshoots/app_final/Captura%20de%20pantalla%202026-03-12%20201243.png) |
+| ![App 10](screenshoots/app_final/Captura%20de%20pantalla%202026-03-12%20201323.png) | ![App 11](screenshoots/app_final/Captura%20de%20pantalla%202026-03-12%20201343.png) | |
 
 ---
 
