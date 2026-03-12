@@ -11,7 +11,7 @@ MoodLens es una aplicación que utiliza inteligencia artificial para detectar em
 
 ---
 
-## Demo
+## Demo (Coming Soon)
 
 <!-- Enlace a video de Vimeo -->
 [Ver demo en Vimeo](https://vimeo.com/TU_VIDEO_ID)
