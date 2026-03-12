@@ -226,7 +226,7 @@ El script:
 
 ## Licencia
 
-Proyecto educativo. Pictogramas sujetos a sus respectivas licencias.
+MIT. Pictogramas sujetos a sus respectivas licencias.
 
 ---
 
