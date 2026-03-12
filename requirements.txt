@@ -1,7 +1,9 @@
 # MoodLens - Dependencias del Proyecto
-# Entorno: Python 3.11 con GPU (CUDA 12.1)
+# Entorno: Python 3.11
 
-# Deep Learning
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# Deep Learning (CPU-only)
 torch>=2.0.0
 torchvision>=0.15.0
 
@@ -17,7 +19,3 @@ seaborn>=0.11.0
 # Machine Learning utilities
 scikit-learn>=1.0.0
 tqdm>=4.60.0
-
-# Jupyter
-jupyter>=1.0.0
-ipykernel>=6.0.0
