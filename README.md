@@ -47,7 +47,7 @@ Con MoodLens, una sonrisa se transforma en el pictograma de felicidad. Un ceño 
 
 ```
 moodlens/
-├── models/                    # Primera versión de MoodLens
+├── beta/                      # Primera versión de MoodLens
 ├── data/FER2013/              # Dataset (28,709 train + 7,178 test)
 ├── models/
 │   ├── emotion_cnn.pth        # Modelo entrenado (69.7% accuracy)
