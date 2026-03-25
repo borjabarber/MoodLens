@@ -26,7 +26,7 @@ Con MoodLens, una sonrisa se transforma en el pictograma de felicidad. Un ceño 
 ## Demo (Coming Soon)
 
 <!-- Enlace a video de Vimeo -->
-[Ver demo en Vimeo](https://vimeo.com/TU_VIDEO_ID)
+[(Próximamente) Ver demo en Vimeo](https://vimeo.com/TU_VIDEO_ID)
 
 ---
 
