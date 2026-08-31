@@ -79,7 +79,7 @@ moodlens/
 
 ### 1. Clonar y crear entorno virtual
 ```bash
-git clone https://github.com/TU_USUARIO/moodlens.git
+git clone https://github.com/borjabarber/MoodLens.git
 cd moodlens
 python -m venv .venv
 
